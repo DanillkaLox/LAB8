@@ -2,19 +2,21 @@
 
 public class Document
 {
-    public int Id { get; set; }
+    private static int _nextId;
+        
+    public int Id { get; private set; }
     public string Title { get; set; }
     public string Author { get; set; }
 
-    public Document(int documentId, string title, string author)
+    public Document(string title, string author)
     {
-        Id = documentId;
+        Id = _nextId++;
         Title = title;
         Author = author;
     }
 
     public override string ToString()
     {
-        return $"ID: {Id}, Название: {Title}, Автор: {Author}";
+        return $"ID: {Id}, Title: {Title}, Author: {Author}";
     }
 }

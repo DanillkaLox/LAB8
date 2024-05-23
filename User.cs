@@ -2,14 +2,16 @@
 
 public class User
 {
-    public int Id { get; set; }
+    private static int _nextId;
+    
+    public int Id { get; private set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string AcademicGroup { get; set; }
 
-    public User(int userId, string firstName, string lastName, string academicGroup)
+    public User(string firstName, string lastName, string academicGroup)
     {
-        Id = userId;
+        Id = _nextId++;
         FirstName = firstName;
         LastName = lastName;
         AcademicGroup = academicGroup;
@@ -17,6 +19,6 @@ public class User
 
     public override string ToString()
     {
-        return $"ID: {Id}, Имя: {FirstName}, Фамилия: {LastName}, Группа: {AcademicGroup}";
+        return $"ID: {Id}, Name: {FirstName}, Surname: {LastName}, Group: {AcademicGroup}";
     }
 }
