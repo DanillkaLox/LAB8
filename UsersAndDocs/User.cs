@@ -1,4 +1,4 @@
-﻿namespace LAB8;
+﻿namespace LAB8.UsersAndDocs;
 
 public class User
 {
